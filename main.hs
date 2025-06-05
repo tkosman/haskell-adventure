@@ -2,6 +2,8 @@ import Control.Monad (when)
 import Data.Maybe (catMaybes)
 import qualified Data.Map as Map
 import System.IO (hFlush, stdout)
+import System.Info (os)
+import System.Process (callCommand)
 
 -- | Game state: each field is an Int, stored in a map
 type GameState = Map.Map String Int
@@ -37,24 +39,73 @@ checkCondition gs (Less key n)      = Map.findWithDefault 0 key gs < n
 checkCondition gs (Equal key n)     = Map.findWithDefault 0 key gs == n
 checkCondition gs (NotEqual key n)  = Map.findWithDefault 0 key gs /= n
 
+-- | Explain why a condition failed
+explainCondition :: GameState -> Condition -> String
+explainCondition gs cond = 
+  let actual = Map.findWithDefault 0 key gs
+      key = case cond of
+        Greater k _   -> k
+        Less k _      -> k
+        Equal k _     -> k
+        NotEqual k _  -> k
+      expected = case cond of
+        Greater _ n   -> "> " ++ show n
+        Less _ n      -> "< " ++ show n
+        Equal _ n     -> "== " ++ show n
+        NotEqual _ n  -> "/= " ++ show n
+  in "Requires `" ++ key ++ " " ++ expected ++ "` (currently: " ++ show actual ++ ")"
+
+-- | Render the game state as a string
+renderGameState :: GameState -> String
+renderGameState gs = unlines $ map (\(k,v) -> k ++ ": " ++ show v) (Map.toList gs)
+
 -- | Apply a choice
 applyChoice :: GameState -> Choice -> IO ()
 applyChoice gs choice = play (modifyState choice gs) (targetNode choice)
 
--- | Game loop
-play :: GameState -> Node -> IO ()
-play gs node = do
-  putStrLn $ "\n" ++ nodeText node
-  let available = filter (maybe True (checkCondition gs) . condition) (options node)
-  mapM_ (\(i, c) -> putStrLn $ show i ++ ". " ++ description c) (zip [1..] available)
+clearScreen :: IO ()
+clearScreen = callCommand $ if os == "mingw32" then "cls" else "clear"
+
+getValidChoice :: GameState -> Node -> IO Choice
+getValidChoice gs node = do
   putStr "> "
   hFlush stdout
-  choiceIndex <- readLn
-  if choiceIndex >= 1 && choiceIndex <= length available
-    then applyChoice gs (available !! (choiceIndex - 1))
-    else do
-      putStrLn "Invalid choice. Try again."
-      play gs node
+  input <- getLine
+  let allChoices = options node
+  case reads input :: [(Int, String)] of
+    [(choiceIndex, "")] ->
+      if choiceIndex >= 1 && choiceIndex <= length allChoices &&
+         maybe True (checkCondition gs) (condition (allChoices !! (choiceIndex - 1)))
+        then return (allChoices !! (choiceIndex - 1))
+        else do
+          putStrLn "Invalid or unavailable choice. Try again."
+          getValidChoice gs node
+    _ -> do
+      putStrLn "Please enter a valid number."
+      getValidChoice gs node
+
+-- | Game loop with styled output and inline locked choices
+play :: GameState -> Node -> IO ()
+play gs node = do
+  clearScreen
+  putStrLn "#########################################"
+  putStrLn $ renderGameState gs
+  putStrLn "#########################################"
+  putStrLn $ "\n " ++ nodeText node ++ "\n"
+
+  let allChoices = options node
+
+  mapM_ (\(i, c) -> do
+            let isAvailable = maybe True (checkCondition gs) (condition c)
+            if isAvailable
+              then putStrLn $ show i ++ ". " ++ description c
+              else case condition c of
+                     Just cond -> putStrLn $ show i ++ ". 🔒 " ++ description c ++ " [" ++ explainCondition gs cond ++ "]"
+                     Nothing   -> return ()
+        ) (zip [1..] allChoices)
+
+  choice <- getValidChoice gs node
+  applyChoice gs choice
 
 -- | Utility to modify a state field
 modField :: String -> Int -> Modifier
