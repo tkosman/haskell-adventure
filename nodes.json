@@ -1,198 +1,498 @@
 {
-    "gameStart": {
-        "text": "Witaj! Wybierz jakim studentem jesteś:",
-        "choices": {
-            "programmer": "Programista",
-            "mathematician": "Matematyk",
-            "slob": "Leń"
-        }
+    "gameState": {
+        "przygotowanie": "int",
+        "obecnyPrzedmiot": "string",
+        "dzień": "int",
+        "czas": "int",
+        "punkty": "int",
+        "zadowolenie": "int",
+        "ada": "int",
+        "c": "int",
+        "oop": "int",
+        "matematyka": " int",
+        "charyzma": "int"
     },
-    "programmer": {
-        "text": "Gratulacje jesteś programistą. Wybrałeś szalony świat Ady, programowania obiektowego i nieskończonych segfaultów",
-        "choices": {
-            "wakeUp": "Zacznij grę, obudź się!"
-        }
-    },
-    "mathematician": {
-        "text": "Gratulacje umiesz matematykę! Czemu w takim razie studujesz informatykę?",
-        "choices": {
-            "wakeUp":"Zacznij grę, obudź się!"
-        }
-    },
-    "slob": {
-        "text": "Po prostu jesteś leniwy",
-        "choices": {
-            "wakeUp": "Zacznij grę, obudź się!"
-        }
-    },
-    "wakeUp": {
-        "text": "Budzisz się w złym nastroju. Co chcesz dzisiaj zrobić?",
-        "choices": {
-            "placGrunwaldzki": "Idziesz na zajęcia",
-            "home": "Zostajesz w domu"
-        }
-    },
-    "placGrunwaldzki": {
-        "text": "",
-        "choices": {
-            "metGebala": "",
-            "tramDerail": "",
-            "meetFriendFromHighSchool": ""
-        }
-    },
-    "metGebala": {
-        "text": "Lorem Ipsum",
-        "choices": {
-            "chooseClass": "Wybierz na jakie zajęcia idziesz:"
-        }
-    },
-    "tramDerail": {
-        "text": "Wykolejajacy się tramwaj przypomina ci, że mieszkasz we Wrocławiu. No nic, trzeba iść na zajęcia - pieszo...",
-        "choices": {
-            "chooseClass": "Wybierz na jakie zajęcia idziesz:"
-        }
-    },
-    "meetFriendFromHighSchool": {
-        "text": "Spotykasz znajomego z liceum. Narzekacie sobie wspólnie na studia, jest przyjemnie... Przez chwilę, bo jednak musisz iść na zajęcia",
-        "choices": {
-            "chooseClass": "Wybierz na jakie zajęcia idziesz:"
-        }
-    },
-    "chooseClass": {
-        "text": "Wygląda na to, że musisz podjąć poważną decyzję. Na jaki typ zajęć teraz pójdziesz?",
-        "choices": {
-            "goToExercises": "Idź na ćwiczenia",
-            "goToLab": "Idź na laby",
-            "goToLecture": "Pora na wykład",
-            "home": "Zmieniłem zdanie, zawijam na chatę"
-        }
-    },
-    "goToExercises": {
-        "text": "" ,
-        "choices": {
-            "chooseClass":"Idz wybrać zajęcia"
-        }
-    },
-    "goToLab": {
-        "text": "Czas przejść się na laboratoria. Jaki przedmot dzisiaj?",
-        "choices": {
-            "adaLab": "Czas poprograować Boeingi! Idziemy na laby z Ady",
-            "cLab": "Obiekty to ściema, pora na optymalizaje. Lecimy na zajęcia z C-lang",
-            "oopLab": "Ja tam lubię Pythona i Javę - OOP"
-        }
-    },
-    "goToLecture": {
-        "text": "Wchodzisz do sali wykładowej. O czym dzisiaj będzie wykład?",
-        "choices": {
-            "adaLecture": "Ada - Pamiętaj programowanie nie jest istotne, istotny jest domek w górach i kot.",
-            "cLecture": "C - Linuxy i te sprawy",
-            "oopLecture": "OOP - Nie wiem o czym jest ten wykład, jest o 7:30"
-        }
-    },
-    "adaLab": {
-        "text": "W końcu udało ci się skompilować swój program. Jakie będą twoje dalsze działania?",
-        "choices": {
-            "duringLab": "W końcu jest twoja kolej na oddanie listy. Idź oddać"
-        }
-    },
-    "cLab": {
-        "text": "",
-        "choices": {
-            "duringLab": ""
-        }
-    },
-    "oopLab": {
-        "text": "",
-        "choices": {
-            "duringLab": ""
-        }
-    },
-    "duringLab": {
-        "text": "Podchodzisz do prowadzącego oddać listę",
-        "choices": {
-            "handListIn": "Jesteś przygotowany, wiesz co i jak",
-            "bluffAboutList": "Wiesz, że twój program nie działa, a chat użył magicznej składni"
-        }
-    },
-    "adaLecture": {
-        "text": "",
-        "choices": {
-            "duringLecture": ""
-        }
-    },
-    "cLecture": {
-        "text": "",
-        "choices": {
-            "duringLecture": ""
-        }
-    },
-    "oopLecture": {
-        "text": "",
-        "choices": {
-            "duringLecture": ""
-        }
-    },
-    "handListIn": {
-        "text": "Śpiewająco tłumaczysz wszystkie struktury, komentarze i funkcje",
-        "choices": {
-            "chooseClass": "Zdane. Wybierasz następne zajęcia"
-        }
-    },
-    "bluffAboutList": {
-        "text": "No nic, nie masz pojęcia skąd wzięła się połowa tego kodu. Dostajesz 3.0 na szynach",
-        "choices": {
-            "chooseClass": "Z głowy. Idziemy zaliczyć kolejny przedmiot"
-        }
-    },
-    "duringLecture": {
-        "text": "Po 15 minutach musisz podjąć trudną decyzję",
-        "choices": {
-            "listenToTheLecture": "Słuchasz wykładu",
-            "talkWithFriends": "Rozmawiasz z ziomkiem"
-        }
-    },
-    "listenToTheLecture": {
-        "text": "Nie jesteś pewien czy to było tego warte",
-        "choices": {
-            "chooseClass": "Wybierz co zrobisz teraz"
-        }
-    },
-    "talkWithFriends": {
-        "text": "Koledzy opowiadają ci zabawne historie. Wykład mija ci szybciej",
-        "choices": {
-            "chooseClass": "Wybierz co zrobisz teraz"
-        }
-    },
-    "home": {
-        "text": "Home sweeet home. Wynajęty dwuosobowy pokój w akademiku. Przynajmniej współlokator wyszedł, więc możesz zrobić coś sensownego",
-        "choices": {
-            "prepareForLab": "Jesteś ambitnym studentem ambitnego kierunku, pora przygotować się na laby (termin był wczoraj)",
-            "goDrinkBeer": "Jedymym sensownym rozwiązaniem wydaje się być piwo...",
-            "doNap": "Idź uciąć komara, przyszły ja będzie się przejmować życiem"
-        }
-    },
-    "prepareForLab": {
-        "text": "Spędzasz wieczór pisząc kod i żałując, że nie wybrałeś pójścia na piwo",
-        "choices": {
-            "home": ""
-        }
-    },
-    "doNap": {
-        "text": "Ucinasz sobie drzemkę. Śni ci się, że nie zdałeś egzaminu z analizy. Budzisz się nieco bardziej wypoczęty",
-        "choices": {
-            "home": "Trzeba zagospodarować sobie resztę popołudnia"
-        }
-    },
-    "goDrinkBeer": {
-        "text": "Idziesz pić piwo. Nic dodać nic ująć",
-        "choices": {
-            "goSleep": "Wracasz zmęczony, już nic dzisiaj nie osiągniesz. Idziemy spać"
-        }
-    },
-    "goSleep": {
-        "text": "Dobranoc. Śpi się wybornie, ale kiedyś trzeba zacząć nowy dzień",
-        "choices": {
-            "wakeUp": "Twój budzik dzwoni, czas wstać"
+    "nodes": {
+        "gameStart": {
+            "nodeText": "Witaj! Wybierz jakim studentem jesteś:",
+            "options": {
+                "programmer": {
+                    "description": "Programista",
+                    "condition": {},
+                    "modifyState": {
+                        "ada": "+10",
+                        "c": "+10",
+                        "oop": "+10",
+                        "matematyka": "+5",
+                        "charyzma": "+5"
+                    }
+                },
+                "mathematician": {
+                    "description": "Matematyk",
+                    "condition": {},
+                    "modifyState": {
+                        "ada": "+5",
+                        "c": "+5",
+                        "oop": "+5",
+                        "matematyka": "+20"
+                    }
+                },
+                "slob": {
+                    "description": "Leń",
+                    "condition": {},
+                    "modifyState": {
+                        "ada": "+5",
+                        "c": "+5",
+                        "oop": "+5",
+                        "matematyka": "+5",
+                        "charyzma": "+20"
+                    }
+                }
+            }
+        },
+        "programmer": {
+            "nodeText": "Gratulacje jesteś programistą. Wybrałeś szalony świat Ady, programowania obiektowego i nieskończonych segfaultów",
+            "options": {
+                "wakeUp": {
+                    "description": "Zacznij grę, obudź się!",
+                    "condition": {},
+                    "modifyState": {
+                        "czas": "=0",
+                        "dzień": "+1"
+                    }
+                }
+            }
+        },
+        "mathematician": {
+            "nodeText": "Gratulacje umiesz matematykę! Czemu w takim razie studujesz informatykę?",
+            "options": {
+                "wakeUp": {
+                    "description": "Zacznij grę, obudź się!",
+                    "condition": {},
+                    "modifyState": {
+                        "czas": "=0",
+                        "dzień": "+1"
+                    }
+                }
+            }
+        },
+        "slob": {
+            "nodeText": "Po prostu jesteś leniwy",
+            "options": {
+                "wakeUp": {
+                    "description": "Zacznij grę, obudź się!",
+                    "condition": {},
+                    "modifyState": {
+                        "czas": "=0",
+                        "dzień": "+1"
+                    }
+                }
+            }
+        },
+        "wakeUp": {
+            "nodeText": "Budzisz się w złym nastroju. Co chcesz dzisiaj zrobić?",
+            "options": {
+                "placGrunwaldzki": {
+                    "description": "Idziesz na zajęcia",
+                    "condition": {},
+                    "modifyState": {}
+                },
+                "home": {
+                    "description": "Zostajesz w domu",
+                    "condition": {},
+                    "modifyState": {}
+                }
+            }
+        },
+        "placGrunwaldzki": {
+            "nodeText": "Jesteś na Placu Grunwaldzkim, wybierz losową opcję",
+            "options": {
+                "metGebala": {
+                    "description": "Zdarzenie losowe 1",
+                    "condition": {},
+                    "modifyState": {}
+                },
+                "tramDerail": {
+                    "description": "Zdarzenie losowe 2",
+                    "condition": {},
+                    "modifyState": {}
+                },
+                "meetFriendFromHighSchool": {
+                    "description": "Zdarzenie losowe 3",
+                    "condition": {},
+                    "modifyState": {}
+                }
+            }
+        },
+        "metGebala": {
+            "nodeText": "Lorem Ipsum",
+            "options": {
+                "chooseClass": {
+                    "description": "Wybierz na jakie zajęcia idziesz:",
+                    "condition": {},
+                    "modifyState": {}
+                }
+            }
+        },
+        "tramDerail": {
+            "nodeText": "Wykolejajacy się tramwaj przypomina ci, że mieszkasz we Wrocławiu. No nic, trzeba iść na zajęcia - pieszo...",
+            "options": {
+                "chooseClass": {
+                    "description": "Wybierz na jakie zajęcia idziesz:",
+                    "condition": {},
+                    "modifyState": {}
+                }
+            }
+        },
+        "meetFriendFromHighSchool": {
+            "nodeText": "Spotykasz znajomego z liceum. Narzekacie sobie wspólnie na studia, jest przyjemnie... Przez chwilę, bo jednak musisz iść na zajęcia",
+            "options": {
+                "chooseClass": {
+                    "description": "Wybierz na jakie zajęcia idziesz:",
+                    "condition": {},
+                    "modifyState": {}
+                }
+            }
+        },
+        "chooseClass": {
+            "nodeText": "Wygląda na to, że musisz podjąć poważną decyzję. Na jaki typ zajęć teraz pójdziesz?",
+            "options": {
+                "goToExercises": {
+                    "description": "Idź na ćwiczenia",
+                    "condition": {
+                        "czas": "<3"
+                    },
+                    "modifyState": {
+                        "czas": "+1",
+                        "punkty": "if (przygotowanie > 0) przygotowanie--; punkty += matematyka*2; else punkty += matematyka"
+                    }
+                },
+                "goToLab": {
+                    "description": "Idź na laby",
+                    "condition": {
+                        "czas": "<3",
+                        "dzień": ">2"
+                    },
+                    "modifyState": {
+                        "czas": "+1",
+                        "przygotowanie": "-1",
+                        "zadowolenie": "-1"
+                    }
+                },
+                "goToLecture": {
+                    "description": "Pora na wykład",
+                    "condition": {
+                        "czas": "<3"
+                    },
+                    "modifyState": {
+                        "czas": "+1",
+                        "zadowolenie": "-1"
+                    }
+                },
+                "home": {
+                    "description": "Zmieniłem zdanie, zawijam na chatę",
+                    "condition": {},
+                    "modifyState": {}
+                }
+            }
+        },
+        "goToExercises": {
+            "nodeText": "" ,
+            "options": {
+                "chooseClass": {
+                    "description": "Idz wybrać zajęcia",
+                    "condition": {},
+                    "modifyState": {}
+                }
+            }
+        },
+        "goToLab": {
+            "nodeText": "Czas przejść się na laboratoria. Jaki przedmot dzisiaj?",
+            "options": {
+                "adaLab": {
+                    "description": "Czas poprograować Boeingi! Idziemy na laby z Ady",
+                    "condition": {},
+                    "modifyState": {
+                        "obecnyPrzedmiot": "ada"
+                    }
+                },
+                "cLab": {
+                    "description": "Obiekty to ściema, pora na optymalizaje. Lecimy na zajęcia z C-lang",
+                    "condition": {},
+                    "modifyState": {
+                        "obecnyPrzedmiot": "c"
+                    }
+                },
+                "oopLab": {
+                    "description": "Ja tam lubię Pythona i Javę - OOP",
+                    "condition": {},
+                    "modifyState": {
+                        "obecnyPrzedmiot": "oop"
+                    }
+                }
+            }
+        },
+        "goToLecture": {
+            "nodeText": "Wchodzisz do sali wykładowej. O czym dzisiaj będzie wykład?",
+            "options": {
+                "adaLecture": {
+                    "description": "Ada - Pamiętaj programowanie nie jest istotne, istotny jest domek w górach i kot.",
+                    "condition": {},
+                    "modifyState": {
+                        "obecnyPrzedmiot": "ada"
+                    }
+                },
+                "cLecture": {
+                    "description": "C - Linuxy i te sprawy",
+                    "condition": {},
+                    "modifyState": {
+                        "obecnyPrzedmiot": "c"
+                    }
+                },
+                "oopLecture": {
+                    "description": "OOP - Nie wiem o czym jest ten wykład, jest o 7:30",
+                    "condition": {},
+                    "modifyState": {
+                        "obecnyPrzedmiot": "oop"
+                    }
+                }
+            }
+        },
+        "adaLab": {
+            "nodeText": "W końcu udało ci się skompilować swój program. Jakie będą twoje dalsze działania?",
+            "options": {
+                "duringLab": {
+                    "description": "W końcu jest twoja kolej na oddanie listy. Idź oddać",
+                    "condition": {},
+                    "modifyState": {}
+                }
+            }
+        },
+        "cLab": {
+            "nodeText": "C się nie linkuje i nie zapowiada się, żeby to się zmieniło",
+            "options": {
+                "duringLab": {
+                    "description": "Idź oddać zaległą listę",
+                    "condition": {},
+                    "modifyState": {}
+                }
+            }
+        },
+        "oopLab": {
+            "nodeText": "Design patterns to twoje drugie imie",
+            "options": {
+                "duringLab": {
+                    "description": "Hop siup oddajemy listę!",
+                    "condition": {},
+                    "modifyState": {}
+                }
+            }
+        },
+        "duringLab": {
+            "nodeText": "Podchodzisz do prowadzącego oddać listę",
+            "options": {
+                "handListIn": {
+                    "description": "Jesteś przygotowany, wiesz co i jak",
+                    "condition": {
+                        "przygotowanie": ">0"
+                    },
+                    "modifyState": {
+                        "punkty": "if (obecnyPrzedmiot == 'ada') punkty += ada*5; elif (obecnyPrzedmiot == 'c') punkty += c*5; (obecnyPrzedmiot == 'oop') punkty += oop*5;"
+                    }
+                },
+                "bluffAboutList": {
+                    "description": "Wiesz, że twój program nie działa, a chat użył magicznej składni",
+                    "condition": {},
+                    "modifyState": {
+                        "punkty": "if (charyzma > 10) punkty += 10;"
+                    }
+                }
+            }
+        },
+        "adaLecture": {
+            "nodeText": "Wgłębiasz się w tajniki ADA CORE",
+            "options": {
+                "duringLecture": {
+                    "description": "Słuchaj dalej",
+                    "condition": {},
+                    "modifyState": {}
+                }
+            }
+        },
+        "cLecture": {
+            "nodeText": "Wgłębiasz się w tajniki C",
+            "options": {
+                "duringLecture": {
+                    "description": "Słuchaj dalej",
+                    "condition": {},
+                    "modifyState": {}
+                }
+            }
+        },
+        "oopLecture": {
+            "nodeText": "Wgłębiasz się w tajniki programowania obiektowego",
+            "options": {
+                "duringLecture": {
+                    "description": "Słuchaj dalej",
+                    "condition": {},
+                    "modifyState": {}
+                }
+            }
+        },
+        "handListIn": {
+            "nodeText": "Śpiewająco tłumaczysz wszystkie struktury, komentarze i funkcje",
+            "options": {
+                "chooseClass": {
+                    "description": "Zdane. Wybierasz następne zajęcia",
+                    "condition": {},
+                    "modifyState": {
+                        "czas": "+1"
+                    }
+                }
+            }
+        },
+        "bluffAboutList": {
+            "nodeText": "No nic, nie masz pojęcia skąd wzięła się połowa tego kodu. Dostajesz 3.0 na szynach",
+            "options": {
+                "chooseClass": {
+                    "description": "Z głowy. Idziemy zaliczyć kolejny przedmiot",
+                    "condition": {},
+                    "modifyState": {
+                        "czas": "+1"
+                    }
+                }
+            }
+        },
+        "duringLecture": {
+            "nodeText": "Po 15 minutach musisz podjąć trudną decyzję",
+            "options": {
+                "listenToTheLecture": {
+                    "description": "Słuchasz wykładu",
+                    "condition": {},
+                    "modifyState": {
+                        "zadowolenie": "-1",
+                        "ada": "if (obecnyPrzedmiot == ada) ada+=1;",
+                        "c": "if (obecnyPrzedmiot == c) c+=1;",
+                        "oop": "if (obecnyPrzedmiot == oop) oop+=1;"
+                    }
+                },
+                "talkWithFriends": {
+                    "description": "Rozmawiasz z ziomkiem",
+                    "condition": {},
+                    "modifyState": {
+                        "zadowolenie": "+1"
+                    }
+                }
+            }
+        },
+        "listenToTheLecture": {
+            "nodeText": "Nie jesteś pewien czy to było tego warte",
+            "options": {
+                "chooseClass": {
+                    "description": "Wybierz co zrobisz teraz",
+                    "condition": {},
+                    "modifyState": {
+                        "czas": "+1"
+                    }
+                }
+            }
+        },
+        "talkWithFriends": {
+            "nodeText": "Koledzy opowiadają ci zabawne historie. Wykład mija ci szybciej",
+            "options": {
+                "chooseClass": {
+                    "description": "Wybierz co zrobisz teraz",
+                    "condition": {},
+                    "modifyState": {
+                        "czas": "+1"
+                    }
+                }
+            }
+        },
+        "home": {
+            "nodeText": "Home sweeet home. Wynajęty dwuosobowy pokój w akademiku. Przynajmniej współlokator wyszedł, więc możesz zrobić coś sensownego",
+            "options": {
+                "prepareForLab": {
+                    "description": "Jesteś ambitnym studentem ambitnego kierunku, pora przygotować się na laby (termin był wczoraj)",
+                    "condition": {
+                        "czas": "<5"
+                    },
+                    "modifyState": {
+                        "czas": "+1",
+                        "przygotowanie": "+1",
+                        "zadowolenie": "-1"
+                    }
+                },
+                "goDrinkBeer": {
+                    "description": "Jedymym sensownym rozwiązaniem wydaje się być piwo...",
+                    "condition": {
+                        "czas": "<5"
+                    },
+                    "modifyState": {
+                        "zadowolenie": "+3"
+                    }
+                },
+                "doNap": {
+                    "description": "Idź uciąć komara, przyszły ja będzie się przejmować życiem",
+                    "condition": {
+                        "czas": "<5"
+                    },
+                    "modifyState": {
+                        "zadowolenie": "+1",
+                        "czas": "+1"
+                    }
+                },
+                "placGrunwaldzki": {
+                    "description": "Zmieniamy zdanie, idziemy na zajęcia",
+                    "condition": {
+                        "czas": "<2"
+                    },
+                    "modifyState": {}
+                }
+            }
+        },
+        "prepareForLab": {
+            "nodeText": "Spędzasz wieczór pisząc kod i żałując, że nie wybrałeś pójścia na piwo",
+            "options": {
+                "home": {
+                    "description": "Tak ci mija dzień",
+                    "condition": {},
+                    "modifyState": {}
+                }
+            }
+        },
+        "doNap": {
+            "nodeText": "Ucinasz sobie drzemkę. Śni ci się, że nie zdałeś egzaminu z analizy. Budzisz się nieco bardziej wypoczęty",
+            "options": {
+                "home": {
+                    "description": "Trzeba zagospodarować sobie resztę popołudnia",
+                    "condition": {},
+                    "modifyState": {}
+                }
+            }
+        },
+        "goDrinkBeer": {
+            "nodeText": "Idziesz pić piwo. Nic dodać nic ująć",
+            "options": {
+                "goSleep": {
+                    "description": "Wracasz zmęczony, już nic dzisiaj nie osiągniesz. Idziemy spać",
+                    "condition": {},
+                    "modifyState": {}
+                }
+            }
+        },
+        "goSleep": {
+            "nodeText": "Dobranoc. Śpi się wybornie, ale kiedyś trzeba zacząć nowy dzień",
+            "options": {
+                "wakeUp": {
+                    "description": "Twój budzik dzwoni, czas wstać",
+                    "condition": {},
+                    "modifyState": {
+                        "czas": "=0",
+                        "dzień": "+1"
+                    }
+                }
+            }
         }
     }
 }

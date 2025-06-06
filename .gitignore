@@ -2,3 +2,4 @@
 *.o
 main
 Main
+.DS_Store
