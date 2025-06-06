@@ -74,7 +74,7 @@ placGrunwaldzkiNode = Node
   ]
 
 metGebalaNode :: Node
-metGebalaNode = Node "Lorem Ipsum"
+metGebalaNode = Node "Spotykasz profesora Gębalę \n - Dzień doby! \n - Dzień dobry, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in rhoncus enim, aliquet feugiat leo. Nulla lacinia nisi et vehicula efficitur. Donec maximus iaculis felis, eu tempus ligula lobortis sed. Cras interdum massa lacus, eu tempus lorem luctus id. Vestibulum tincidunt consequat magna. Maecenas id enim risus. Sed nisl erat, tristique nec ullamcorper quis, imperdiet sit amet nulla. Nam rhoncus neque risus. Pellentesque molestie leo sed aliquet efficitur. Sed urna nunc, egestas vel dolor quis, blandit finibus mi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam feugiat ullamcorper elit, non pharetra nibh lacinia ut. Nulla sem diam, tincidunt at blandit sit amet, condimentum tempor orci. Fusce urna diam, bibendum sit amet porttitor sit amet, vestibulum accumsan ligula. Donec dignissim, mi a tincidunt auctor, metus mi malesuada nunc, faucibus tempus sem leo sit amet mi. Etiam bibendum faucibus justo eu pellentesque."
   [ Choice "Wybierz na jakie zajęcia idziesz:" chooseClassNode noCond id ]
 
 tramDerailNode :: Node
