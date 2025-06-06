@@ -42,7 +42,7 @@ play gs node = do
   putStrLn "#########################################"
   putStrLn (show gs)
   putStrLn "#########################################"
-  putStrLn $ "\n " ++ nodeText node ++ "\n"
+  putStrLn $ "\n" ++ nodeText node ++ "\n"
 
   let allChoices = options node
 
