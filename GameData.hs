@@ -1,6 +1,9 @@
 module GameData (GameState(..), Condition(..), noCondition, Choice(..), Node(..)) where
 
+import System.Random (StdGen)
+
 data GameState = GameState {
+  randGen::StdGen,
   hunger::Int,
   drunk::Bool,
   experience::Int

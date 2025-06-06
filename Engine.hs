@@ -6,6 +6,7 @@ import System.IO (hFlush, stdout)
 import GameData
 import Utils
 
+
 applyChoice :: GameState -> Choice -> IO ()
 applyChoice gs choice = play (modifyState choice gs) (targetNode choice)
 

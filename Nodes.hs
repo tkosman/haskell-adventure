@@ -1,5 +1,5 @@
 -- GameState.hs
-module Nodes (initialState, startNode) where
+module Nodes (startNode) where
 
 import GameData
 
@@ -23,11 +23,4 @@ uniNode = Node "You're at the university. You learned a lot!"
   [ Choice "Go back home" startNode noCondition (\gs -> gs { experience = experience gs + 5}) ]
 
 breakfastNode = Node "Yum! That was a good breakfast."
-  [ Choice "Go back to room" startNode noCondition (\gs -> gs { hunger = experience gs - 5}) ]
-
-initialState :: GameState
-initialState = GameState {
-  hunger = 10,
-  drunk = False,
-  experience = 0
-}
+  [ Choice "Go back to room" startNode noCondition (\gs -> gs { hunger = hunger gs - 5}) ]
