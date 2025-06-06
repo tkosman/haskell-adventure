@@ -1,0 +1,198 @@
+{
+    "gameStart": {
+        "text": "Witaj! Wybierz jakim studentem jesteś:",
+        "choices": {
+            "programmer": "Programista",
+            "mathematician": "Matematyk",
+            "slob": "Leń"
+        }
+    },
+    "programmer": {
+        "text": "Gratulacje jesteś programistą. Wybrałeś szalony świat Ady, programowania obiektowego i nieskończonych segfaultów",
+        "choices": {
+            "wakeUp": "Zacznij grę, obudź się!"
+        }
+    },
+    "mathematician": {
+        "text": "Gratulacje umiesz matematykę! Czemu w takim razie studujesz informatykę?",
+        "choices": {
+            "wakeUp":"Zacznij grę, obudź się!"
+        }
+    },
+    "slob": {
+        "text": "Po prostu jesteś leniwy",
+        "choices": {
+            "wakeUp": "Zacznij grę, obudź się!"
+        }
+    },
+    "wakeUp": {
+        "text": "Budzisz się w złym nastroju. Co chcesz dzisiaj zrobić?",
+        "choices": {
+            "placGrunwaldzki": "Idziesz na zajęcia",
+            "home": "Zostajesz w domu"
+        }
+    },
+    "placGrunwaldzki": {
+        "text": "",
+        "choices": {
+            "metGebala": "",
+            "tramDerail": "",
+            "meetFriendFromHighSchool": ""
+        }
+    },
+    "metGebala": {
+        "text": "Lorem Ipsum",
+        "choices": {
+            "chooseClass": "Wybierz na jakie zajęcia idziesz:"
+        }
+    },
+    "tramDerail": {
+        "text": "Wykolejajacy się tramwaj przypomina ci, że mieszkasz we Wrocławiu. No nic, trzeba iść na zajęcia - pieszo...",
+        "choices": {
+            "chooseClass": "Wybierz na jakie zajęcia idziesz:"
+        }
+    },
+    "meetFriendFromHighSchool": {
+        "text": "Spotykasz znajomego z liceum. Narzekacie sobie wspólnie na studia, jest przyjemnie... Przez chwilę, bo jednak musisz iść na zajęcia",
+        "choices": {
+            "chooseClass": "Wybierz na jakie zajęcia idziesz:"
+        }
+    },
+    "chooseClass": {
+        "text": "Wygląda na to, że musisz podjąć poważną decyzję. Na jaki typ zajęć teraz pójdziesz?",
+        "choices": {
+            "goToExercises": "Idź na ćwiczenia",
+            "goToLab": "Idź na laby",
+            "goToLecture": "Pora na wykład",
+            "home": "Zmieniłem zdanie, zawijam na chatę"
+        }
+    },
+    "goToExercises": {
+        "text": "" ,
+        "choices": {
+            "chooseClass":"Idz wybrać zajęcia"
+        }
+    },
+    "goToLab": {
+        "text": "Czas przejść się na laboratoria. Jaki przedmot dzisiaj?",
+        "choices": {
+            "adaLab": "Czas poprograować Boeingi! Idziemy na laby z Ady",
+            "cLab": "Obiekty to ściema, pora na optymalizaje. Lecimy na zajęcia z C-lang",
+            "oopLab": "Ja tam lubię Pythona i Javę - OOP"
+        }
+    },
+    "goToLecture": {
+        "text": "Wchodzisz do sali wykładowej. O czym dzisiaj będzie wykład?",
+        "choices": {
+            "adaLecture": "Ada - Pamiętaj programowanie nie jest istotne, istotny jest domek w górach i kot.",
+            "cLecture": "C - Linuxy i te sprawy",
+            "oopLecture": "OOP - Nie wiem o czym jest ten wykład, jest o 7:30"
+        }
+    },
+    "adaLab": {
+        "text": "W końcu udało ci się skompilować swój program. Jakie będą twoje dalsze działania?",
+        "choices": {
+            "duringLab": "W końcu jest twoja kolej na oddanie listy. Idź oddać"
+        }
+    },
+    "cLab": {
+        "text": "",
+        "choices": {
+            "duringLab": ""
+        }
+    },
+    "oopLab": {
+        "text": "",
+        "choices": {
+            "duringLab": ""
+        }
+    },
+    "duringLab": {
+        "text": "Podchodzisz do prowadzącego oddać listę",
+        "choices": {
+            "handListIn": "Jesteś przygotowany, wiesz co i jak",
+            "bluffAboutList": "Wiesz, że twój program nie działa, a chat użył magicznej składni"
+        }
+    },
+    "adaLecture": {
+        "text": "",
+        "choices": {
+            "duringLecture": ""
+        }
+    },
+    "cLecture": {
+        "text": "",
+        "choices": {
+            "duringLecture": ""
+        }
+    },
+    "oopLecture": {
+        "text": "",
+        "choices": {
+            "duringLecture": ""
+        }
+    },
+    "handListIn": {
+        "text": "Śpiewająco tłumaczysz wszystkie struktury, komentarze i funkcje",
+        "choices": {
+            "chooseClass": "Zdane. Wybierasz następne zajęcia"
+        }
+    },
+    "bluffAboutList": {
+        "text": "No nic, nie masz pojęcia skąd wzięła się połowa tego kodu. Dostajesz 3.0 na szynach",
+        "choices": {
+            "chooseClass": "Z głowy. Idziemy zaliczyć kolejny przedmiot"
+        }
+    },
+    "duringLecture": {
+        "text": "Po 15 minutach musisz podjąć trudną decyzję",
+        "choices": {
+            "listenToTheLecture": "Słuchasz wykładu",
+            "talkWithFriends": "Rozmawiasz z ziomkiem"
+        }
+    },
+    "listenToTheLecture": {
+        "text": "Nie jesteś pewien czy to było tego warte",
+        "choices": {
+            "chooseClass": "Wybierz co zrobisz teraz"
+        }
+    },
+    "talkWithFriends": {
+        "text": "Koledzy opowiadają ci zabawne historie. Wykład mija ci szybciej",
+        "choices": {
+            "chooseClass": "Wybierz co zrobisz teraz"
+        }
+    },
+    "home": {
+        "text": "Home sweeet home. Wynajęty dwuosobowy pokój w akademiku. Przynajmniej współlokator wyszedł, więc możesz zrobić coś sensownego",
+        "choices": {
+            "prepareForLab": "Jesteś ambitnym studentem ambitnego kierunku, pora przygotować się na laby (termin był wczoraj)",
+            "goDrinkBeer": "Jedymym sensownym rozwiązaniem wydaje się być piwo...",
+            "doNap": "Idź uciąć komara, przyszły ja będzie się przejmować życiem"
+        }
+    },
+    "prepareForLab": {
+        "text": "Spędzasz wieczór pisząc kod i żałując, że nie wybrałeś pójścia na piwo",
+        "choices": {
+            "home": ""
+        }
+    },
+    "doNap": {
+        "text": "Ucinasz sobie drzemkę. Śni ci się, że nie zdałeś egzaminu z analizy. Budzisz się nieco bardziej wypoczęty",
+        "choices": {
+            "home": "Trzeba zagospodarować sobie resztę popołudnia"
+        }
+    },
+    "goDrinkBeer": {
+        "text": "Idziesz pić piwo. Nic dodać nic ująć",
+        "choices": {
+            "goSleep": "Wracasz zmęczony, już nic dzisiaj nie osiągniesz. Idziemy spać"
+        }
+    },
+    "goSleep": {
+        "text": "Dobranoc. Śpi się wybornie, ale kiedyś trzeba zacząć nowy dzień",
+        "choices": {
+            "wakeUp": "Twój budzik dzwoni, czas wstać"
+        }
+    }
+}
