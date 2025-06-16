@@ -103,7 +103,6 @@ chooseClassNode = Node
     Choice "Idź na laby" goToLabNode
       (Condition (\gs -> czas gs < 3 && dzień gs > 2) "czas < 3 && dzień > 2")
       (\gs -> gs { czas = czas gs + 1
-                 , przygotowanie = przygotowanie gs - 1
                  , zadowolenie = zadowolenie gs - 1 }),
     Choice "Pora na wykład" goToLectureNode
       (Condition (\gs -> czas gs < 3) "czas < 3")
@@ -114,7 +113,8 @@ chooseClassNode = Node
 
 -- JSON: goToExercises
 goToExercisesNode :: Node
-goToExercisesNode = Node ""
+goToExercisesNode = Node 
+  "Zgłaszasz się do tablicy. Coś tam bazgrolisz, ale chyba poprawnie. Dostajesz plusa"
   [ Choice "Idź wybrać zajęcia" chooseClassNode noCond id ]
 
 -- JSON: goToLab
@@ -171,7 +171,7 @@ duringLabNode = Node
                       _     -> 0
         in gs { punkty = punkty gs + bonus }
       ),
-    Choice "Bluffujesz" bluffNode noCond
+    Choice "Wiesz, że twój program nie działa, a chat użył magicznej składni" bluffNode noCond
       (\gs ->
         if charyzma gs > 10 then gs { punkty = punkty gs + 10 } else gs
       )
@@ -242,7 +242,8 @@ homeNode = Node
       (Condition (\gs -> czas gs < 5) "czas < 5")
       (\gs -> gs { czas = czas gs + 1, zadowolenie = zadowolenie gs + 1 }),
     Choice "Zmieniamy zdanie, idziemy na zajęcia" placGrunwaldzkiNode
-      (Condition (\gs -> czas gs < 2) "czas < 2") id
+      (Condition (\gs -> czas gs < 2) "czas < 2") id,
+    Choice "Idziesz spać" goSleepNode noCond id
   ]
 
 prepareForLabNode = Node
