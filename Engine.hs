@@ -22,20 +22,18 @@ getValidChoice gameState node = do
   input <- getLine
   let allChoices = options node
   
-  -- reads input and parses it as a pair of Int and rest of the text
   case reads input :: [(Int, String)] of
     [(choiceIndex, "")] ->
       if validIndex allChoices choiceIndex && 
         check (condition (allChoices !! choiceIndex)) gameState
         then return (allChoices !! choiceIndex)
         else do
-          putStrLn "Invalid or unavailable choice. Try again."
+          putStrLn "Nieprawidłowy lub niedostępny wybór. Spróbuj ponownie."
           getValidChoice gameState node
     _ -> do
-      putStrLn "Please enter a valid number."
+      putStrLn "Wpisz odpowiednią liczbę."
       getValidChoice gameState node
 
--- | Game loop with styled output and inline locked choices
 play :: GameState -> Node -> IO ()
 play gs node = do
   clearScreen

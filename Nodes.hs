@@ -13,7 +13,6 @@ modifyMany fs gs = foldl (flip ($)) gs fs
 startNode :: Node
 startNode = gameStart
 
--- JSON: gameStart
 gameStart :: Node
 gameStart = Node "Witaj! Wybierz jakim studentem jesteś:" [
     Choice "Programista" programmerNode noCond
@@ -41,7 +40,6 @@ gameStart = Node "Witaj! Wybierz jakim studentem jesteś:" [
       ])
   ]
 
--- JSON nodes: programmer, mathematician, slob
 programmerNode, mathematicianNode, slobNode :: Node
 programmerNode = Node
   "Gratulacje jesteś programistą. Wybrałeś szalony świat Ady, programowania obiektowego i nieskończonych segfaultów"
@@ -56,7 +54,6 @@ slobNode = Node
   [ Choice "Zacznij grę, obudź się!" wakeUpNode noCond
       (\gs -> gs { czas = 0, dzień = dzień gs + 1 }) ]
 
--- JSON: wakeUp
 wakeUpNode :: Node
 wakeUpNode = Node
   "Budzisz się w złym nastroju. Co chcesz dzisiaj zrobić?"
@@ -64,7 +61,6 @@ wakeUpNode = Node
   , Choice "Zostajesz w domu" homeNode noCond id
   ]
 
--- JSON: placGrunwaldzki
 placGrunwaldzkiNode :: Node
 placGrunwaldzkiNode = Node
   "Jesteś na Placu Grunwaldzkim, wybierz losową opcję"
@@ -87,7 +83,6 @@ meetFriendNode = Node
   "Spotykasz znajomego z liceum. Narzekacie sobie wspólnie na studia, jest przyjemnie... Przez chwilę, ale musisz iść na zajęcia"
   [ Choice "Wybierz na jakie zajęcia idziesz:" chooseClassNode noCond id ]
 
--- JSON: chooseClass
 chooseClassNode :: Node
 chooseClassNode = Node
   "Wygląda na to, że musisz podjąć poważną decyzję. Na jaki typ zajęć teraz pójdziesz?"
@@ -111,13 +106,11 @@ chooseClassNode = Node
     Choice "Zmieniłem zdanie, zawijam na chatę" homeNode noCond id
   ]
 
--- JSON: goToExercises
 goToExercisesNode :: Node
 goToExercisesNode = Node 
   "Zgłaszasz się do tablicy. Coś tam bazgrolisz, ale chyba poprawnie. Dostajesz plusa"
   [ Choice "Idź wybrać zajęcia" chooseClassNode noCond id ]
 
--- JSON: goToLab
 goToLabNode :: Node
 goToLabNode = Node
   "Czas przejść się na laboratoria. Jaki przedmiot dzisiaj?"
@@ -129,7 +122,6 @@ goToLabNode = Node
       (\gs -> gs { obecnyPrzedmiot = "oop" })
   ]
 
--- JSON: goToLecture
 goToLectureNode :: Node
 goToLectureNode = Node
   "Wchodzisz do sali wykładowej. O czym dzisiaj będzie wykład?"
@@ -141,7 +133,6 @@ goToLectureNode = Node
       (\gs -> gs { obecnyPrzedmiot = "oop" })
   ]
 
--- JSON: adaLab, cLab, oopLab
 adaLabNode :: Node
 adaLabNode = Node
   "W końcu udało ci się skompilować swój program. Jakie będą twoje dalsze działania?"
@@ -157,7 +148,6 @@ oopLabNode = Node
   "Design patterns to twoje drugie imię"
   [ Choice "Oddaj listę" duringLabNode noCond id ]
 
--- JSON: duringLab
 duringLabNode :: Node
 duringLabNode = Node
   "Podchodzisz do prowadzącego oddać listę"
@@ -177,7 +167,6 @@ duringLabNode = Node
       )
   ]
 
--- JSON: lecture nodes
 adaLectureNode, cLectureNode, oopLectureNode :: Node
 adaLectureNode = Node "Wgłębiasz się w tajniki ADA CORE"
   [ Choice "Słuchaj dalej" duringLectureNode noCond id ]
@@ -186,7 +175,6 @@ cLectureNode = Node "Wgłębiasz się w tajniki C"
 oopLectureNode = Node "Wgłębiasz się w tajniki programowania obiektowego"
   [ Choice "Słuchaj dalej" duringLectureNode noCond id ]
 
--- JSON: handListIn, bluffAboutList
 handListInNode :: Node
 handListInNode = Node "Śpiewająco tłumaczysz wszystkie struktury, komentarze i funkcje"
   [ Choice "Zdane. Wybierasz następne zajęcia" chooseClassNode noCond
@@ -212,7 +200,6 @@ duringLectureNode = Node
       (\gs -> gs { zadowolenie = zadowolenie gs + 1 })
   ]
 
-
 listenLectureNode :: Node
 listenLectureNode = Node
   "Nie jesteś pewien czy to było tego warte"
@@ -225,8 +212,6 @@ talkWithFriendsNode = Node
   [ Choice "Wybierz co zrobisz teraz" chooseClassNode noCond
       (\gs -> gs { czas = czas gs + 1 }) ]
 
--- JSON: homeNode and follow-ups
--- (już w sustawie, ale z dodatkowymi follow‑ups)
 prepareForLabNode, doNapNode, goDrinkBeerNode, goSleepNode :: Node
 
 homeNode :: Node
