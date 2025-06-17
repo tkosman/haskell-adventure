@@ -8,7 +8,7 @@ noCond = noCondition
 type Modifier = GameState -> GameState
 
 modifyMany :: [Modifier] -> Modifier
-modifyMany fs gs = foldl (flip ($)) gs fs
+modifyMany fs gs = foldl (flip ($)) gs fs -- fs = [f1, f2, f3] to f3 (f2 (f1 gs))
 
 startNode :: Node
 startNode = gameStart

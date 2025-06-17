@@ -1,4 +1,3 @@
--- GameState.hs
 module Engine (play) where
 
 import System.IO (hFlush, stdout)
